@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/reactavo/static/css/main.073c9b0a.css",
-    "main.js": "/reactavo/static/js/main.35ec6b6b.js",
+    "main.js": "/reactavo/static/js/main.569b1bf4.js",
     "static/js/787.cc4e593a.chunk.js": "/reactavo/static/js/787.cc4e593a.chunk.js",
     "static/media/logo.svg": "/reactavo/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/reactavo/index.html",
     "main.073c9b0a.css.map": "/reactavo/static/css/main.073c9b0a.css.map",
-    "main.35ec6b6b.js.map": "/reactavo/static/js/main.35ec6b6b.js.map",
+    "main.569b1bf4.js.map": "/reactavo/static/js/main.569b1bf4.js.map",
     "787.cc4e593a.chunk.js.map": "/reactavo/static/js/787.cc4e593a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.35ec6b6b.js"
+    "static/js/main.569b1bf4.js"
   ]
 }
