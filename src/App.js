@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import C01Componente from './componentes/C01componente';
 import Appform from './componentes/Appform';
 
 function App() {
+    const camposRegistros = {nombre:"", edad:"", genero:""}
   return (
     <div style={{background:"yellow", width:"350px", padding:"10px"}}>
       <Appform/>
