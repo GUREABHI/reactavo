@@ -25,24 +25,42 @@ function App() {
     }
     
   }
+  useEffect( () => {
+    fnRead();
+  }, []);
 //fnRead();
 //  console.log(docsBD);
 
 
 /// DELETE - eliminar - fnDelete ///
   const [idActual,setIdActual] = useState("");
-  const fnDelete = (xId) => {
-
+  const fnDelete = async (xId) => {
+    if(window.confirm("Confirme para eliminar")){
+      await deleteDoc(doc(db,'persona', xId));
+      console.log("Se alimino..."+xId);
+    }
   }
 
 
    /// const camposRegistros = {nombre:"", edad:"", genero:""}///
   return (
+
+
     <div style={{background:"yellow", width:"350px", padding:"10px"}}>
-      <Appform {...{idActual}}/>
-      <p>1. Juan Manuel  23 Masculino  ----x - A</p>
-      <p>2. Rosa Maria  25 Femenino  ----x - A</p>
-      <p>3. Luis Miguel  40 Masculino  ----x - A</p>
+      <h1>reactavo (app.js)</h1>
+      <h3>READ / DELETE</h3>
+      <Appform {...{idActual, setIdActual, fnRead}}/>
+      {
+      docsBD.map((p,index) => 
+      <p key={p.id}>
+        {index+1}.{p.nombre}
+        ----
+        <span onClick={() => fnDelete(p.id)}> x</span>
+        ----
+        <span onClick={() => setIdActual(p.id)}> A</span>
+      </p>
+      )
+    }
     </div>
   );
 }
