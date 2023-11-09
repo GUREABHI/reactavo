@@ -43,7 +43,6 @@ const BarraRutasProtected = () => {
           <div id="menu">
             <ul>
               <li><Link to="/sistema-crud/applista">Alumnos(AppLista)</Link> </li>
-                      
               <li><Link to="/sistema-file/fotos">Fotos</Link> </li>
             </ul>
           </div>
