@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/GUREABHI/reactavo/static/css/main.ceedbe18.css",
-    "main.js": "/GUREABHI/reactavo/static/js/main.527a1303.js",
+    "main.js": "/GUREABHI/reactavo/static/js/main.35036345.js",
     "static/js/787.cc4e593a.chunk.js": "/GUREABHI/reactavo/static/js/787.cc4e593a.chunk.js",
     "index.html": "/GUREABHI/reactavo/index.html",
     "main.ceedbe18.css.map": "/GUREABHI/reactavo/static/css/main.ceedbe18.css.map",
-    "main.527a1303.js.map": "/GUREABHI/reactavo/static/js/main.527a1303.js.map",
+    "main.35036345.js.map": "/GUREABHI/reactavo/static/js/main.35036345.js.map",
     "787.cc4e593a.chunk.js.map": "/GUREABHI/reactavo/static/js/787.cc4e593a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ceedbe18.css",
-    "static/js/main.527a1303.js"
+    "static/js/main.35036345.js"
   ]
 }
