@@ -3,8 +3,8 @@ import React from 'react'
 const Fotos = () => {
   return (
     <div id='file'>
-      <h1>Fotos</h1>
-      Página para fotos...
+      <h1>“Gestión-Archivos”</h1>
+      - Videos<tr/>- Fotos <tr/>- PDF<tr/>- Word
     </div>
   )
 }

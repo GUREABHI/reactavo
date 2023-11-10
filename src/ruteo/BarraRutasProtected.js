@@ -19,6 +19,7 @@ import Fotos from '../protegido/sistemafile/Fotos';
 import RegisterForm from '../login/RegisterForm';
 import LoginForm from '../login/LoginForm';
 import AppLista from '../protegido/sistemacrud/AppLista';
+import Videos from '../protegido/sistemafile/Videos';
 
 const BarraRutasProtected = () => {
     const { user } = useAuth();
@@ -26,8 +27,17 @@ const BarraRutasProtected = () => {
     const navigate = useNavigate();
   
     const handleSignOut = () => {
+      if (user) {
+        signOut(auth)
+          .then(() => {
+            // Cierre de sesión exitoso
+            navigate('/home'); // Redirigir a ruta /home
+          })
+          .catch((error) => {
+            console.error('Error al cerrar sesión:', error);
+          });
+      }
     }
-  
     return (
       <div style={{ background:"royalblue", padding:"10px" }}>
         <nav>
@@ -43,7 +53,9 @@ const BarraRutasProtected = () => {
           <div id="menu">
             <ul>
               <li><Link to="/sistema-crud/applista">Alumnos(AppLista)</Link> </li>
-              <li><Link to="/sistema-file/fotos">Fotos</Link> </li>
+              <li><Link to="/sistema-file/fotos">Gestión-Archivos</Link> </li>
+
+              
             </ul>
           </div>
         </nav>
@@ -59,7 +71,11 @@ const BarraRutasProtected = () => {
             <Route path="applista" element={<AppLista />} />
           </Route>
   
-  
+          <Route path="/sistema-file" element={<MarcoParaSistemaFILE />}>
+            <Route index element={<SistemaFILE />} />
+            <Route path="videos" element={<Videos />} />
+          </Route>
+
           <Route path="/sistema-file" element={<MarcoParaSistemaFILE />}>
             <Route index element={<SistemaFILE />} />
             <Route path="fotos" element={<Fotos />} />

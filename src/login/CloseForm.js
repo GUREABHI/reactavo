@@ -12,21 +12,16 @@ function LoginForm() {
   
   const navigate = useNavigate();
 
-  const handleSignIn = async (e) => {
-    e.preventDefault();
-
-    if (!email || !password) {
-      setError('Por favor, completa ambos campos.');
-      return;
-    }
-
-    try {
-      await signIn(email, password);
-      // Inicio de sesión exitoso: limpiar el error
-      setError(null);
-      navigate('/sistema-crud'); // Redirigir a ruta /sistema-crud
-    } catch (error) {
-      setError('Error al iniciar sesión: ' + error.message);
+  const handleSignOut = () => {
+    if (user) {
+      signOut(auth)
+        .then(() => {
+          // Cierre de sesión exitoso
+          navigate('/home'); // Redirigir a ruta /home
+        })
+        .catch((error) => {
+          console.error('Error al cerrar sesión:', error);
+        });
     }
   }
 
@@ -35,7 +30,7 @@ function LoginForm() {
   return (
     <div id='public'>
       <h2>Iniciar Sesión</h2>
-      <form onSubmit={handleSignIn}>
+      <form onSubmit={handleSignOut}>
         <div>
           <label>Email:</label>
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />

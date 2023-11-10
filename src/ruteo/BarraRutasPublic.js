@@ -9,6 +9,9 @@ import { useNavigate } from 'react-router-dom';
 import Home from '../public/Home';
 import Dashboard from '../public/Dashboard';
 import LoginForm from '../login/LoginForm';
+import Contacto from '../public/Contacto';
+import Informacion from '../public/Informacion';
+import Noticias from '../public/Noticias';
 
 const BarraRutasPublic = () => {
     const { user } = useAuth();
@@ -16,6 +19,16 @@ const BarraRutasPublic = () => {
     const navigate = useNavigate();
   
     const handleSignOut = () => {
+      if (user) {
+        signOut(auth)
+          .then(() => {
+            // Cierre de sesión exitoso
+            navigate('/home'); // Redirigir a ruta /home
+          })
+          .catch((error) => {
+            console.error('Error al cerrar sesión:', error);
+          });
+      }
     }
   
     return (
@@ -33,10 +46,11 @@ const BarraRutasPublic = () => {
           
           <div id="menu">
             <ul>
-              <li><Link to="/">Portada(Dashboard)</Link> </li>
               <li><Link to="/home">Inicio(Home)</Link> </li>
-              <li><Link to="/home">Inicio(Home)</Link> </li>
-              <li><Link to="/home">Inicio(Home)</Link> </li>
+              <li><Link to="/informacion">Informacion</Link> </li>
+              <li><Link to="/noticias">Noticias</Link> </li>
+              <li><Link to="/contacto">Contacto</Link> </li>
+              
             </ul>
           </div>
         </nav>
@@ -45,8 +59,11 @@ const BarraRutasPublic = () => {
           <Route path="/" element={<Dashboard />} />
           <Route path="/iniciarsesion" element={<LoginForm />} />
 
-          <Route path="/" element={<Dashboard />} />
+          
           <Route path="/home" element={<Home />} />
+          <Route path="/informacion" element={<Informacion />} />
+          <Route path="/noticias" element={<Noticias />} />
+          <Route path="/contacto" element={<Contacto />} />
         </Routes> 
       </div>
     )
